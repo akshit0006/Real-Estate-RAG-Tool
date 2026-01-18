@@ -1,0 +1,16 @@
+python-dotenv
+streamlit
+unstructured
+tiktoken
+langchain-core
+langchain-chroma
+langchain-groq
+langchain-community
+langchain-huggingface
+sentence-transformers
+chromadb
+requests
+beautifulsoup4
+lxml
+html5lib
+protobuf
