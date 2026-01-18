@@ -1,10 +1,19 @@
-# flake8: noqa
 from langchain_core.prompts import PromptTemplate
-from langchain.chains.qa_with_sources.stuff_prompt import template
 
+template = """Given the following extracted parts of a long document and a question,
+create a final answer with references ("SOURCES").
+If you don't know the answer, just say that you don't know.
 
-updated_template = "You are a helpful assistant for RealEstate research." + template
-PROMPT = PromptTemplate(template=updated_template, input_variables=["summaries", "question"])
+QUESTION: {question}
+=========
+{summaries}
+=========
+FINAL ANSWER:"""
+
+PROMPT = PromptTemplate(
+    template=template,
+    input_variables=["summaries", "question"]
+)
 
 EXAMPLE_PROMPT = PromptTemplate(
     template="Content: {page_content}\nSource: {source}",
